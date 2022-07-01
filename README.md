@@ -64,6 +64,6 @@ public class Data {
 
 The class is in charge of dividing and grouping DailyDate into ArrayList according to the requirement of the project.
 
-> This one is under construction :D!
+> This one is under construction :D !
 
 
