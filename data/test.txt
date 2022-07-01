@@ -1,0 +1,232 @@
+South America: 503
+Papua New Guinea: 476
+Cambodia: 529
+Northern Cyprus: 134
+Kazakhstan: 483
+Paraguay: 489
+Syria: 474
+Bahamas: 480
+Solomon Islands: 270
+Montserrat: 145
+Mali: 471
+Marshall Islands: 254
+Panama: 487
+Laos: 472
+Vatican: 490
+Argentina: 555
+Falkland Islands: 67
+Africa: 512
+Seychelles: 482
+Belize: 473
+Zambia: 478
+Bahrain: 501
+Congo: 481
+Guinea-Bissau: 471
+Namibia: 482
+Comoros: 435
+Finland: 527
+North Macedonia: 499
+Georgia: 499
+Saint Kitts and Nevis: 471
+Yemen: 455
+Eritrea: 475
+Aruba: 102
+Madagascar: 476
+Libya: 492
+Micronesia (country): 169
+Sweden: 524
+Malawi: 467
+Andorra: 494
+Liechtenstein: 492
+Poland: 492
+Bulgaria: 488
+Jordan: 493
+Tunisia: 492
+Tuvalu: 50
+United Arab Emirates: 527
+Kenya: 490
+French Polynesia: 148
+Brunei: 487
+Djibouti: 478
+Lebanon: 504
+Azerbaijan: 495
+Cuba: 484
+Mauritania: 482
+Saint Lucia: 482
+Guernsey: 165
+Bonaire Sint Eustatius and Saba: 1
+European Union: 533
+Israel: 505
+San Marino: 498
+Australia: 530
+Tajikistan: 435
+Myanmar: 469
+Cameroon: 490
+Gibraltar: 174
+Cyprus: 487
+Malaysia: 531
+Timor: 474
+North America: 534
+Iceland: 498
+Oman: 501
+Armenia: 495
+Gabon: 482
+Luxembourg: 501
+Brazil: 499
+Turks and Caicos Islands: 174
+Algeria: 500
+Jersey: 113
+Slovenia: 523
+Antigua and Barbuda: 483
+Colombia: 490
+Ecuador: 495
+Moldova: 488
+Vanuatu: 241
+Eswatini: 482
+Honduras: 485
+Italy: 525
+Nauru: 83
+Haiti: 476
+Afghanistan: 501
+Burundi: 465
+Singapore: 533
+Russia: 525
+Netherlands: 498
+China: 534
+Kyrgyzstan: 478
+International: 518
+Bhutan: 490
+Romania: 499
+Togo: 492
+Philippines: 526
+Cote d'Ivoire: 485
+Uzbekistan: 481
+Pitcairn: 7
+Asia: 534
+Democratic Republic of Congo: 485
+British Virgin Islands: 43
+Zimbabwe: 476
+location: 1
+Montenegro: 479
+Dominica: 474
+Indonesia: 494
+Benin: 480
+Angola: 476
+Sudan: 484
+Portugal: 502
+New Caledonia: 155
+Grenada: 474
+Cayman Islands: 195
+Greece: 506
+Latvia: 503
+Mongolia: 486
+Iran: 506
+Morocco: 518
+Guatemala: 508
+Guyana: 484
+Iraq: 501
+Chile: 502
+Nepal: 531
+Isle of Man: 169
+Tanzania: 480
+Ukraine: 493
+Ghana: 482
+Anguilla: 149
+India: 526
+Canada: 530
+Maldives: 488
+Turkey: 485
+Belgium: 521
+Taiwan: 540
+South Africa: 518
+Trinidad and Tobago: 482
+Bermuda: 175
+Central African Republic: 481
+Jamaica: 485
+Peru: 550
+Turkmenistan: 1
+Germany: 532
+Fiji: 526
+Hong Kong: 533
+Guinea: 483
+United States: 534
+Chad: 477
+Somalia: 480
+Sao Tome and Principe: 459
+Thailand: 552
+Equatorial Guinea: 481
+Kiribati: 52
+Costa Rica: 490
+Vietnam: 533
+Kuwait: 501
+Nigeria: 497
+Croatia: 500
+Cook Islands: 36
+Faeroe Islands: 161
+Sri Lanka: 529
+Uruguay: 483
+United Kingdom: 525
+Switzerland: 500
+Samoa: 233
+Palestine: 491
+Spain: 524
+Liberia: 480
+Venezuela: 482
+Burkina Faso: 486
+Estonia: 522
+World: 534
+Wallis and Futuna: 106
+Niue: 16
+Austria: 500
+South Korea: 535
+Mozambique: 474
+El Salvador: 477
+Monaco: 496
+Lesotho: 422
+Tonga: 63
+Hungary: 493
+South Sudan: 460
+Europe: 533
+Japan: 534
+Belarus: 497
+Curacao: 101
+Mauritius: 478
+Albania: 500
+New Zealand: 497
+Sint Maarten (Dutch part): 57
+Senegal: 497
+Ethiopia: 483
+Czechia: 495
+Egypt: 511
+Sierra Leone: 465
+Bolivia: 485
+Malta: 519
+Oceania: 531
+Saudi Arabia: 494
+Cape Verde: 476
+Pakistan: 500
+Kosovo: 482
+Gambia: 479
+Ireland: 496
+Qatar: 496
+Slovakia: 490
+France: 532
+Lithuania: 496
+Serbia: 499
+Bosnia and Herzegovina: 491
+Niger: 476
+Rwanda: 482
+Bangladesh: 493
+Barbados: 479
+Nicaragua: 477
+Norway: 500
+Botswana: 466
+Saint Vincent and the Grenadines: 482
+Macao: 151
+Denmark: 523
+Dominican Republic: 495
+Mexico: 555
+Uganda: 475
+Suriname: 482
+Greenland: 163
+Saint Helena: 92
