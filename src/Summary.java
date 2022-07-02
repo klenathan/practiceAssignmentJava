@@ -6,7 +6,7 @@ public class Summary {
     ArrayList<Country> dataArray;
 
     public static void main(String[] args) {
-        Summary sum = new Summary();
+
     }
     Summary() {
         Data data = new Data("data/covid-data.csv");
@@ -117,14 +117,13 @@ public class Summary {
             cases += Integer.parseInt(dailyData.getNew_cases());
             population = Integer.parseInt(dailyData.getPopulation());
         }
+
+        vaxed = Integer.parseInt(range.get(range.size()-1).getVaxed()) - Integer.parseInt(range.get(0).getVaxed());
         differenceData.add(deaths);
         differenceData.add(cases);
         differenceData.add(vaxed);
         differenceData.add(population);
 
-        vaxed = Integer.parseInt(range.get(range.size()-1).getVaxed()) - Integer.parseInt(range.get(0).getVaxed());
-        rate = (vaxed * 1.0 / population) * 100;
-//        System.out.printf("Deaths: %d | Cases: %d | New vaccinated: %d %.2f%% | Population: %d%n", deaths, cases, vaxed, rate, population);
         return differenceData;
     }
 
