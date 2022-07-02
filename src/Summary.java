@@ -7,14 +7,6 @@ public class Summary {
 
     public static void main(String[] args) {
         Summary sum = new Summary();
-
-        ArrayList<ArrayList<DailyData>> covidDataArray = sum.groupDataByGroupSize("FRA", 1);
-
-        // Testing
-        for (int i = 0; i < covidDataArray.size(); i++) {
-            System.out.printf(covidDataArray.get(i).get(0).getDate() + " -> " + covidDataArray.get(i).get(covidDataArray.get(i).size()-1).getDate() + " | ");
-            sum.getTotalMetric(covidDataArray.get(i), covidDataArray);
-        }
     }
     Summary() {
         Data data = new Data("data/covid-data.csv");
@@ -67,12 +59,6 @@ public class Summary {
             }
             dividedData.add(tempList);
         }
-//                TESTING ------------------------------------------------------------------------------------------------------------
-//        for (ArrayList<DailyData> testGroup : dividedData) {
-//            String lastDay = testGroup.get(testGroup.size() - 1).getDate();
-//            String firstDay = testGroup.get(0).getDate();
-//            System.out.printf("%s -> %s: %d%n", firstDay, lastDay,testGroup.size());
-//        }
         return dividedData;
     }
 
@@ -88,9 +74,6 @@ public class Summary {
             dataIsoCode = x.getIsoCode();
             if(Objects.equals(dataIsoCode, iso_code)) {
                 country = x;
-                System.out.println(x.getIsoCode());
-                System.out.println(country.getCountryData().get(0).getPopulation());
-                System.out.println(country.getCountryData().size());
                 dividedData = formatByGroupSize(country, groupSize);
                 if (dividedData == null) {
                     System.out.println("Different iso code or group size");
@@ -124,40 +107,52 @@ public class Summary {
     }
 
     // TODO: 01/07/2022 Working on this 
-    public void getDifferenceMetric(ArrayList<DailyData> range) {
+    public ArrayList<Integer> getDifferenceMetric(ArrayList<DailyData> range) {
         int deaths = 0, cases = 0, vaxed = 0, population = 0;
         double rate = 0;
+        ArrayList<Integer> differenceData = new ArrayList<>();
 
-        for (int i = 0; i < range.size(); i++) {
-            deaths+= Integer.parseInt(range.get(i).getNew_death());
-            cases+= Integer.parseInt(range.get(i).getNew_cases());
-            population = Integer.parseInt(range.get(i).getPopulation());
-
-
+        for (DailyData dailyData : range) {
+            deaths += Integer.parseInt(dailyData.getNew_death());
+            cases += Integer.parseInt(dailyData.getNew_cases());
+            population = Integer.parseInt(dailyData.getPopulation());
         }
+        differenceData.add(deaths);
+        differenceData.add(cases);
+        differenceData.add(vaxed);
+        differenceData.add(population);
+
         vaxed = Integer.parseInt(range.get(range.size()-1).getVaxed()) - Integer.parseInt(range.get(0).getVaxed());
         rate = (vaxed * 1.0 / population) * 100;
-        System.out.println(String.format("Deaths: %d | Cases: %d | New vaccinated: %d %.2f%% | Population: %d", deaths, cases, vaxed, rate, population));
+//        System.out.printf("Deaths: %d | Cases: %d | New vaccinated: %d %.2f%% | Population: %d%n", deaths, cases, vaxed, rate, population);
+        return differenceData;
     }
 
-    public void getTotalMetric(ArrayList<DailyData> range, ArrayList<ArrayList<DailyData>> countryData) {
+    public ArrayList<Integer> getTotalMetric(ArrayList<DailyData> range, ArrayList<ArrayList<DailyData>> countryData) {
         int deaths = 0;
         int cases = 0;
         int vaxed = 0;
         int population = 0;
         double rate = 0;
+        ArrayList<Integer> toDateData = new ArrayList<>();
 
         for (int x = 0; x < countryData.size(); x++) {
-            for (int i = 0; i < range.size(); i++) {
+            for (DailyData dailyData : range) {
 
-                deaths+= Integer.parseInt(range.get(i).getNew_death());
-                cases+= Integer.parseInt(range.get(i).getNew_cases());
-                vaxed = Integer.parseInt(range.get(i).getVaxed());
-                population = Integer.parseInt(range.get(i).getPopulation());
+                deaths += Integer.parseInt(dailyData.getNew_death());
+                cases += Integer.parseInt(dailyData.getNew_cases());
+                vaxed = Integer.parseInt(dailyData.getVaxed());
+                population = Integer.parseInt(dailyData.getPopulation());
                 rate = (vaxed * 1.0 / population) * 100;
             }
         }
-        System.out.println(String.format("Deaths: %d | Cases: %d | Vaccinated: %d %.2f%%| Population: %d", deaths, cases, vaxed, rate, population));
+        toDateData.add(deaths);
+        toDateData.add(cases);
+        toDateData.add(vaxed);
+        toDateData.add(population);
+
+//        System.out.printf("Deaths: %d | Cases: %d | Vaccinated: %d %.2f%%| Population: %d%n", deaths, cases, vaxed, rate, population);
+        return toDateData;
     }
 }
 

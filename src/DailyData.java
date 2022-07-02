@@ -9,6 +9,10 @@ public class DailyData {
         this.population = population;
     }
 
+    public DailyData(){
+
+    }
+
 
     public String getDate() {
         return date;

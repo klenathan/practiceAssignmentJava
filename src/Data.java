@@ -21,14 +21,6 @@ public class Data {
     public static void main(String[] args) {
 
         Data data = new Data("data/covid-data.csv");
-
-//        System.out.println(data.countryDataArray.get("AFG").get(0).getDate());
-//        ArrayList<DailyData> countryTest = data.countryDataArray.get("AFG");
-//        System.out.println("Size: " + countryTest.size());
-//        for (int i = 0; i < countryTest.size(); i++) {
-//            System.out.printf("Data of AFG| date: %s | new_cases: %s | population: %s%n", countryTest.get(i).getDate(), countryTest.get(i).getNew_cases(), countryTest.get(i).getPopulation());
-//        }
-//        System.out.println(data.countryDataArray.get("AFG").get(0).getPopulation());
     }
 
     Data(String path) {
@@ -41,6 +33,7 @@ public class Data {
         ArrayList<String[]> dataArray = this.readData();
         ArrayList<DailyData> tempDailyArray = new ArrayList<>();
         HashMap<String, String[]> countryInfo = new HashMap<>();
+
         for (String[] strings : dataArray) {
             if (!countryDataArray.containsKey(strings[0])) {
                 tempDailyArray = new ArrayList<>();
@@ -73,9 +66,6 @@ public class Data {
                 String line = reader.nextLine();
                 lineArray = line.split(",", -1);
 
-                // Fix blank or empty space to "0"
-                // TODO: 01/07/2022 This thing changed the vaxed number to 0 :(
-                // TODO: 01/07/2022 now the vax number is updated but first vax number doesnot reset to 0
                 for (int i = 0; i < lineArray.length; i++) {
                     lineArray[i] = lineArray[i] != "" ? lineArray[i] : "0";
                 }
@@ -87,7 +77,6 @@ public class Data {
                 }
 
                 if (!Objects.equals(lineArray[0], prevCountry)) {
-                    System.out.println(prevCountry + " " + lineArray[0]);
                     lineArray[6] = "0";
                     prevVaxNum = "0";
                     prevCountry = lineArray[0];
