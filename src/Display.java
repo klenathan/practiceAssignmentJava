@@ -1,37 +1,54 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Display {
-    static enum method {total, difference};
-    Display(){
+
+    private Integer colWidth;
+    Summary summary = new Summary();
+    ArrayList<ArrayList<DailyData>> groupingResult = summary.groupDataByGroupNum("LAO", 15);
+    ArrayList<Group> groupArray2 = summary.getTotalMetric();
+
+    Display(int colWidth){
+        this.colWidth = colWidth;
+
+
+        route();
 
     }
     public void route(){
-
-    }
-
-    public void divideTable(ArrayList<DailyData> data){
-        for (int i = 0; i < data.size(); i++) {
+        while(true) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("=".repeat(colWidth * 2 + 3));
+            System.out.printf("Hello? Please choose: ");
+            int userInput = scan.nextInt();
+            if (userInput == 1) {
+                drawTable(this.groupArray2, "case");
+            } else if (userInput == 0) {
+                break;
+            }
 
         }
     }
-    public void drawTable(ArrayList<ArrayList<DailyData>> dividedGroup,
-                          Summary summary,
-                          method method){
-        int width = 25;
-        for (int i = 0; i < dividedGroup.size(); i++) {
-            String firstDay = dividedGroup.get(i).get(0).getDate();
-            String lastDay = dividedGroup.get(i).get(dividedGroup.get(i).size()-1).getDate();
-            System.out.printf(firstDay + " " + lastDay
-                    + " ".repeat(width - firstDay.length() - lastDay.length() - 1)
-                    + " | ");
+    public void drawTable(ArrayList<Group> dividedGroup, String valueMetric){
 
-            if(method == Display.method.difference) {
-                System.out.println(summary.getDifferenceMetric(dividedGroup.get(i)).get(1) + " units");
+        System.out.println("|Date" + " ".repeat(colWidth-4) + "|" +valueMetric+  " ".repeat(colWidth-valueMetric.length()) + "|");
+        System.out.println("|" + "=".repeat(colWidth) + "|" + "=".repeat(colWidth) + "|");
+
+        for (int i = 0; i < dividedGroup.size(); i++) {
+            String date = dividedGroup.get(i).getDate();
+            int value = 0;
+            if (valueMetric == "vax"){
+                value = dividedGroup.get(i).vax;
+            } else if (valueMetric == "case") {
+                value = dividedGroup.get(i).cases;
+            } else if (valueMetric == "death") {
+                value = dividedGroup.get(i).deaths;
             } else {
-                System.out.println(summary.getTotalMetric(dividedGroup.get(i), dividedGroup).get(1));
+                System.out.println("Wrong metric");
             }
 
+            System.out.println("|" + date + " ".repeat(colWidth-date.length())
+                    + "|" + value + " ".repeat(colWidth-String.valueOf(value).length()) + "|");
         }
     }
 }
